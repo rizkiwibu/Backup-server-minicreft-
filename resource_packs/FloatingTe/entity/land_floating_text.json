@@ -1,0 +1,47 @@
+//Addon made by Death_Aruban, for the purpose of entertainment and map improvement
+//• Re-upload our content on other platforms without authorization
+//• Add your own shorteners or ads to download our content
+//• Remove creator credits
+//• Modify or steal our content
+//• Post direct download links of our content
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "da:land",
+			"materials": {
+				"default": "slime_outer"
+			},
+			"textures": {
+				"land": "textures/land_floating_text/land",
+				"nether": "textures/land_floating_text/nether",
+				"end": "textures/land_floating_text/end"
+			},
+			"geometry": {
+				"land": "geometry.land",
+				"nether": "geometry.land",
+				"end": "geometry.land"
+			},
+			"render_controllers": [
+				"controller.render.land"
+			],
+			"spawn_egg": {
+				"texture": "spawn_egg",
+				"texture_index": 49
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+				]
+			},
+			"animations": {
+				"idle": "animation.land.rotate"
+			},
+			"animation_controllers": [
+				{
+					"idle": "controller.animation.land.idle"
+				}
+			]
+		}
+	}
+}

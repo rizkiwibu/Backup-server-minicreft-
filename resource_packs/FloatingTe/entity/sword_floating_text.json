@@ -1,0 +1,53 @@
+//Addon made by Death_Aruban, for the purpose of entertainment and map improvement
+//• Re-upload our content on other platforms without authorization
+//• Add your own shorteners or ads to download our content
+//• Remove creator credits
+//• Modify or steal our content
+//• Post direct download links of our content
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "da:sword",
+			"materials": {
+				"default": "zombie"
+			},
+			"textures": {
+				"sword_wood": "textures/sword_floating_text/sword_wood_floating",
+				"sword_stone": "textures/sword_floating_text/sword_stone_floating",
+				"sword_iron": "textures/sword_floating_text/sword_iron_floating",
+				"sword_gold": "textures/sword_floating_text/sword_gold_floating",
+				"sword_diamond": "textures/sword_floating_text/sword_diamond_floating",
+				"sword_netherite": "textures/sword_floating_text/sword_netherite_floating"
+			},
+			"geometry": {
+				"sword_wood": "geometry.sword",
+				"sword_stone": "geometry.sword",
+				"sword_iron": "geometry.sword",
+				"sword_gold": "geometry.sword",
+				"sword_diamond": "geometry.sword",
+				"sword_netherite": "geometry.sword"
+			},
+			"render_controllers": [
+				"controller.render.sword_floating"
+			],
+			"spawn_egg": {
+				"texture": "spawn_egg",
+				"texture_index": 49
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+				]
+			},
+			"animations": {
+				"idle": "animation.sword.rotate"
+			},
+			"animation_controllers": [
+				{
+					"idle": "controller.animation.sword.idle"
+				}
+			]
+		}
+	}
+}

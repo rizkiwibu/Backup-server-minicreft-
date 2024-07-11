@@ -1,0 +1,18 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "Made By: Amon28/Dewdimpple\nTwitter:@Dewdimpple\nYoutube: Dewdimpple Ch.",
+        "name": "NPC R v9",
+        "uuid": "0a5b8e8b-9730-49b1-bc58-d434c6ca84b7",
+        "version": [6, 3, 0],
+        "min_engine_version": [ 1, 19, 80 ]
+    },
+    "modules": [
+        {
+            "description": "Example vanilla resource pack",
+            "type": "resources",
+            "uuid": "743f6949-53be-44b6-b326-398005028819",
+            "version": [6, 3, 0]
+        }
+    ]
+}

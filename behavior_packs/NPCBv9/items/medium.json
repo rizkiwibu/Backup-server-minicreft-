@@ -1,0 +1,18 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "npc:adjust_height_medium"
+    },
+
+    "components": {
+      "minecraft:display_name":{
+		"value": "Adjust Height [Medium]"
+	  },
+	  "minecraft:icon":{
+		  "frame": 0,
+		  "texture": "medium"
+	  }
+    }
+  }
+}

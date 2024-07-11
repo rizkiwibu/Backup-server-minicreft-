@@ -1,0 +1,9 @@
+snippet category
+	{texture:"",name:"§lnameCategory\n§r§f[ click here ]",array:[]}
+
+snippet buy_items
+	{texture:"",buttonname:"itemsName\n[ click here ]",itemid:"id:item",data:0,price:10,min_buy:1,max_buy:1,stock:2000}
+	
+snippet sell_items
+    {texture:"",buttonname:"itemsName\n[ click here ]",itemid:"id:item",data:0,price:10,min_sell:1,max_sell:1,stock:2000}
+    

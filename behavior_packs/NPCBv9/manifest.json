@@ -1,0 +1,18 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "Made By: Amon28/Dewdimpple\nTwitter:@Dewdimpple\nYoutube: Dewdimpple Ch.",
+		"name": "NPC B v9",
+        "uuid": "0647ec42-5938-4c98-9d8d-fa254d38674c",
+        "version": [ 6, 3, 0 ],
+        "min_engine_version": [ 1, 19, 80 ]
+    },
+    "modules": [
+        {
+            "description": "Example vanilla behavior pack",
+            "type": "data",
+            "uuid": "fa6e90c8-c925-460f-8155-c8a60b753caa",
+            "version": [6, 3, 0]
+        }
+    ]
+}

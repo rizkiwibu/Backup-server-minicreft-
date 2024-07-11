@@ -1,0 +1,516 @@
+{
+	"format_version": "1.17.10",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:player",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					"root"
+				]
+			},
+			"animations": {
+			    "grappling_hook": "controller.animation.grappling_hook",
+			    "mob_fly": "controller.animation.mob_fly",
+			    "fly_up": "animation.fly_up",
+			    "fly_down": "animation.fly_down",
+			    "dynamic_lighting": "animation.dynamic_lighting",
+			    "mana_render": "animation.mana_render",
+			    "dynamic_light": "controller.animation.player_items",
+				"root": "controller.animation.player.general"
+			}
+		},
+
+		"component_groups": {
+			"default_player": {
+				"minecraft:breathable": {
+					"total_supply": 15,
+					"suffocate_time": -1,
+					"inhale_time": 3.75,
+					"generates_bubbles": false
+				},
+				"minecraft:movement": {
+					"value": 0.1
+				}
+			},
+			"grappling_hook_off": {
+			    "minecraft:variant": {
+			        "value": 0
+			    }
+			},
+			"grappling_hook_on": {
+			    "minecraft:variant": {
+			        "value": 1
+			    }
+			},
+			"wing_on": {
+				"minecraft:is_sheared": {}
+			},
+			"wing_0": {
+				"minecraft:skin_id": {
+					"value": 0
+				}
+			},
+			"wing_1": {
+				"minecraft:skin_id": {
+					"value": 1
+				}
+			},
+			"wing_2": {
+				"minecraft:skin_id": {
+					"value": 2
+				}
+			},
+			"wing_3": {
+				"minecraft:skin_id": {
+					"value": 3
+				}
+			},
+			"wing_4": {
+				"minecraft:skin_id": {
+					"value": 4
+				}
+			},
+			"wing_5": {
+				"minecraft:skin_id": {
+					"value": 5
+				}
+			},
+			"wing_6": {
+				"minecraft:skin_id": {
+					"value": 6
+				}
+			},
+			"wing_7": {
+				"minecraft:skin_id": {
+					"value": 7
+				}
+			},
+			"wing_8": {
+				"minecraft:skin_id": {
+					"value": 8
+				}
+			},
+			"wing_9": {
+				"minecraft:skin_id": {
+					"value": 9
+				}
+			},
+			"mermaid_tail": {
+				"minecraft:is_baby": {},
+				"minecraft:breathable": {
+					"total_supply": 15,
+					"breathes_water": true,
+					"suffocate_time": -1,
+					"inhale_time": 3.75,
+					"generates_bubbles": false
+				},
+				"minecraft:movement": {
+					"value": 0.2
+				},
+				"minecraft:timer": {
+					"time": 0.3,
+					"looping": true,
+					"time_down_event": {
+						"event": "ck:mermaid_tail_remove",
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:add_bad_omen": {
+				"minecraft:spell_effects": {
+					"add_effects": [{
+						"effect": "bad_omen",
+						"duration": 6000,
+						"display_on_screen_animation": true
+					}]
+				},
+				"minecraft:timer": {
+					"time": [0.0, 0.0],
+					"looping": false,
+					"time_down_event": {
+						"event": "minecraft:clear_add_bad_omen",
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:clear_bad_omen_spell_effect": {
+				"minecraft:spell_effects": {}
+			},
+			"minecraft:raid_trigger": {
+				"minecraft:raid_trigger": {
+					"triggered_event": {
+						"event": "minecraft:remove_raid_trigger",
+						"target": "self"
+					}
+				},
+				"minecraft:spell_effects": {
+					"remove_effects": "bad_omen"
+				}
+			}
+		},
+
+		"components": {
+			"minecraft:experience_reward": {
+				"on_death": "Math.Min(query.player_level * 7, 100)"
+			},
+			"minecraft:type_family": {
+				"family": ["player"]
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:loot": {
+				"table": "loot_tables/empty.json"
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.8
+			},
+			"minecraft:can_climb": {},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [{
+					"filters": {
+						"test": "in_lava",
+						"subject": "self",
+						"operator": "==",
+						"value": true
+					},
+					"cause": "lava",
+					"damage_per_tick": 4
+				}]
+			},
+			"minecraft:attack": {
+				"damage": 1
+			},
+			"minecraft:player.saturation": {
+				"value": 20
+			},
+			"minecraft:player.exhaustion": {
+				"value": 0,
+				"max": 4
+			},
+			"minecraft:player.level": {
+				"value": 0,
+				"max": 24791
+			},
+			"minecraft:player.experience": {
+				"value": 0,
+				"max": 1
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": -1,
+				"inhale_time": 3.75,
+				"generates_bubbles": false
+			},
+			"minecraft:movement": {
+				"value": 0.1
+			},
+			"minecraft:nameable": {
+				"always_show": true,
+				"allow_name_tag_renaming": false
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:insomnia": {
+				"days_until_insomnia": 3
+			},
+			"minecraft:rideable": {
+				"seat_count": 2,
+				"family_types": [
+					"parrot_tame", "wyvern_baby_1"
+				],
+				"pull_in_entities": false,
+				"seats": [{
+						"position": [0.4, -0.2, -0.1],
+						"min_rider_count": 0,
+						"max_rider_count": 0,
+						"lock_rider_rotation": 0
+					},
+					{
+						"position": [-0.4, -0.2, -0.1],
+						"min_rider_count": 1,
+						"max_rider_count": 2,
+						"lock_rider_rotation": 0
+					}
+				]
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:block_climber": {},
+			"minecraft:environment_sensor": {
+				"triggers": [{
+					"filters": {
+						"all_of": [{
+								"test": "has_mob_effect",
+								"subject": "self",
+								"value": "bad_omen"
+							},
+							{
+								"test": "is_in_village",
+								"subject": "self",
+								"value": true
+							}
+						]
+					},
+					"event": "minecraft:trigger_raid"
+				},
+					{
+						"filters": {
+							"all_of": [{
+									"test": "in_water"
+								},
+								{
+									"any_of": [{
+											"test": "has_equipment",
+											"subject": "self",
+											"domain": "head",
+											"operator": "==",
+											"value": "ck:necklace_0"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "self",
+											"domain": "head",
+											"operator": "==",
+											"value": "ck:necklace_1"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "self",
+											"domain": "head",
+											"operator": "==",
+											"value": "ck:necklace_2"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "self",
+											"domain": "head",
+											"operator": "==",
+											"value": "ck:necklace_3"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "self",
+											"domain": "head",
+											"operator": "==",
+											"value": "ck:necklace_4"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "self",
+											"domain": "head",
+											"operator": "==",
+											"value": "ck:necklace_5"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "self",
+											"domain": "head",
+											"operator": "==",
+											"value": "ck:necklace_6"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "self",
+											"domain": "head",
+											"operator": "==",
+											"value": "ck:necklace_7"
+										},
+										{
+											"test": "has_equipment",
+											"subject": "self",
+											"domain": "head",
+											"operator": "==",
+											"value": "ck:necklace_8"
+										}
+									]
+								}
+							]
+						},
+						"event": "ck:mermaid_tail"
+					}]
+			}
+		},
+
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"default_player",
+						"grappling_hook_off"
+					]
+				}
+			},
+			"minecraft:gain_bad_omen": {
+				"add": {
+					"component_groups": [
+						"minecraft:add_bad_omen"
+					]
+				}
+			},
+			"minecraft:clear_add_bad_omen": {
+				"remove": {
+					"component_groups": [
+						"minecraft:add_bad_omen"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:clear_bad_omen_spell_effect"
+					]
+				}
+			},
+			"minecraft:trigger_raid": {
+				"add": {
+					"component_groups": ["minecraft:raid_trigger"]
+				}
+			},
+			"minecraft:remove_raid_trigger": {
+				"remove": {
+					"component_groups": ["minecraft:raid_trigger"]
+				}
+			},
+			"ck:mermaid_tail": {
+				"remove": {
+					"component_groups": [
+						"default_player"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"mermaid_tail"
+					]
+				}
+			},
+			"ck:mermaid_tail_remove": {
+				"remove": {
+					"component_groups": [
+						"mermaid_tail"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"default_player"
+					]
+				}
+			},
+			"ck:wing_on": {
+				"add": {
+					"component_groups": [
+						"wing_on"
+					]
+				}
+			},
+			"ck:wing_off": {
+				"remove": {
+					"component_groups": [
+						"wing_on"
+					]
+				}
+			},
+			"ck:grappling_hook": {
+				"remove": {
+					"component_groups": [
+						"grappling_hook_off"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"grappling_hook_on"
+					]
+				}
+			},
+			"ck:grappling_hook_remove": {
+				"remove": {
+					"component_groups": [
+						"grappling_hook_on"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"grappling_hook_off"
+					]
+				}
+			},
+			"ck:wing_remove": {
+				"remove": {
+					"component_groups": [
+						"wing_on"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"wing_0"
+					]
+				}
+			},
+			"ck:wing_1": {
+				"add": {
+					"component_groups": [
+						"wing_1"
+					]
+				}
+			},
+			"ck:wing_2": {
+				"add": {
+					"component_groups": [
+						"wing_2"
+					]
+				}
+			},
+			"ck:wing_3": {
+				"add": {
+					"component_groups": [
+						"wing_3"
+					]
+				}
+			},
+			"ck:wing_4": {
+				"add": {
+					"component_groups": [
+						"wing_4"
+					]
+				}
+			},
+			"ck:wing_5": {
+				"add": {
+					"component_groups": [
+						"wing_5"
+					]
+				}
+			},
+			"ck:wing_6": {
+				"add": {
+					"component_groups": [
+						"wing_6"
+					]
+				}
+			},
+			"ck:wing_7": {
+				"add": {
+					"component_groups": [
+						"wing_7"
+					]
+				}
+			},
+			"ck:wing_8": {
+				"add": {
+					"component_groups": [
+						"wing_8"
+					]
+				}
+			},
+			"ck:wing_9": {
+				"add": {
+					"component_groups": [
+						"wing_9"
+					]
+				}
+			}
+		}
+	}
+}

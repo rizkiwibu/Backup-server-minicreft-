@@ -1,0 +1,41 @@
+
+{
+	"format_version": 2,
+	"header": {
+		"name": "§l§aFloating §bText+ §cRs",
+		"description": "§c---------------------------------------------------------\n§fBig update of the \nfloating text\n§fAdd\n§6+Add and Delete Floating text\n§6+Add Menu floating text\n§6+Add Particle\n§6+Add Item floating\n§aDownload MCPDl Death_Aruban\n§cV 4.0.0\n§c---------------------------------------------------------",
+		"uuid": "5d8314d4-b879-406c-85b3-3071de21ae89",
+		"version": [
+			4,
+			0,
+			0
+		],
+		"min_engine_version": [
+			1,
+			13,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "d2dbd5f7-4070-4e09-8eb3-040290f5e3d7",
+			"version": [
+				2,
+				0,
+				2
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"version": [
+				4,
+				0,
+				0
+			],
+			"uuid": "16bf7602-f08f-40b4-9019-58b0a33d92c7"
+		}
+	]
+}
+}

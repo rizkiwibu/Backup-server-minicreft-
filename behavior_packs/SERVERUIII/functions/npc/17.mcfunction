@@ -1,0 +1,3 @@
+playsound note.bell @s
+title @s title §bTeleporting...
+tp @s 1020.47 83.00 9993.62

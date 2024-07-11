@@ -1,0 +1,89 @@
+//bridge-file-version: #2
+{
+	"resource_pack_name": "vanilla",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"da:floating_text": {
+			"textures": "textures/items/floating_text"
+		},
+		"da:kill_floating_text": {
+			"textures": "textures/items/kill_floating_text"
+		},
+		"da:menu": {
+			"textures": "textures/items/menu"
+		},
+		"da:up": {
+			"textures": "textures/items/up"
+		},
+		"da:down": {
+			"textures": "textures/items/down"
+		},
+		"da:particle": {
+			"textures": "textures/items/particle"
+		},
+		"da:item_floating": {
+			"textures": "textures/items/item_floating"
+		},
+		"da:back": {
+			"textures": "textures/items/back"
+		},
+		"da:edit": {
+			"textures": "textures/items/edit"
+		},
+		"da:summon": {
+			"textures": "textures/items/summon"
+		},
+		"da:teleport": {
+			"textures": "textures/items/teleport"
+		},
+		"da:reset": {
+			"textures": "textures/items/reset"
+		},
+		"da:speed": {
+			"textures": "textures/items/speed"
+		},
+		"da:sword": {
+			"textures": "textures/items/sword"
+		},
+		"da:terra": {
+			"textures": "textures/items/terra"
+		},
+		"da:chestplate": {
+			"textures": "textures/items/chestplate"
+		},
+		"da:item_skin_floating": {
+			"textures": "textures/items/skin_floating"
+		},
+		"da:menu_floating_clicable": {
+			"textures": "textures/items/menu"
+		},
+		"da:cb1": {
+			"textures": "textures/items/cb/cb1"
+		},
+		"da:cb2": {
+			"textures": "textures/items/cb/cb2"
+		},
+		"da:cb3": {
+			"textures": "textures/items/cb/cb3"
+		},
+		"da:cb4": {
+			"textures": "textures/items/cb/cb4"
+		},
+		"da:cb5": {
+			"textures": "textures/items/cb/cb5"
+		},
+		"da:cb6": {
+			"textures": "textures/items/cb/cb6"
+		},
+		"da:cb7": {
+			"textures": "textures/items/cb/cb7"
+		},
+		"da:cb8": {
+			"textures": "textures/items/cb/cb8"
+		},
+		"da:menu_floating_clickcable": {
+			"textures": "textures/items/clickable"
+		}
+
+	}
+}

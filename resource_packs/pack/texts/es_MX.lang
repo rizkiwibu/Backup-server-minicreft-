@@ -1,0 +1,34 @@
+pack.name=CustomizableRanksV1.0.5
+pack.description=Ranks for everyone CREATED BY: JackWorlds
+item.chat_rank:rank_item=Item de rangos
+ranks.menu=Menu de Rangos
+sidebar.menu=Configuracion de Scoreboard
+add.rank=Agregar Rangos
+sidebar.title=Titulo
+sidebar.warning=No usar el simbolo §
+sidebar.line=Linea
+sidebar.scoreboard=Seleccionar puntuacion a mostrar
+sidebar.toggle=Desactivado/Activado
+rank.player=Seleccionar Jugador
+rank.default=Rangos por Defecto
+rank.custom=Rango personalizado
+rank.color=Color de rango personalizado
+rank.toggle=¿Reemplazar otros rangos?
+rank.color.name=Color del nombre
+rank.color.message=Color del mensaje
+leaderboard.menu=Tabla de clasificación
+add.leaderboard=Añadir tabla de clasificación
+remove.leaderboard=Eliminar tabla de clasificación
+scoreboard.leader=Coloca tu marcador
+
+floating_text.menu=Textos flotantes
+add.floating_text=Añadir texto flotante
+remove.floating_text=Eliminar texto flotante
+scoreboard.floating_text=Ingresa el texto
+
+leader.amount=Seleccionar tamaño de líder
+leader.order=Establece cómo deseas que aparezca la lista de jugadores en tu tabla de clasificación; puedes usar las siguientes variables.
+leader.title=Establece el título de la tabla de clasificación; puedes usar las siguientes variables.
+nametag.body=Establece el orden de el nametag de los jugadores; puedes usar las siguentes variables.
+item.spawn_egg.entity.chat_rank:leaderboard.name=Generar Tabla de Clasificación
+entity.chat_rank:leaderboard.name=Tabla de Clasificación

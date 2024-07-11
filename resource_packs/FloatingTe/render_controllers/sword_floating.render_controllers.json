@@ -1,0 +1,44 @@
+//Addon made by Death_Aruban, for the purpose of entertainment and map improvement
+//• Re-upload our content on other platforms without authorization
+//• Add your own shorteners or ads to download our content
+//• Remove creator credits
+//• Modify or steal our content
+//• Post direct download links of our content
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.sword_floating": {
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"Texture.sword_wood",
+						"Texture.sword_stone",
+						"Texture.sword_iron",
+						"Texture.sword_gold",
+						"Texture.sword_diamond",
+						"Texture.sword_netherite"
+					]
+				},
+				"geometries": {
+					"array.geos": [
+						"geometry.sword_wood",
+						"geometry.sword_stone",
+						"geometry.sword_iron",
+						"geometry.sword_gold",
+						"geometry.sword_diamond",
+						"geometry.sword_netherite"
+					]
+				}
+			},
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"textures": [
+				"Array.skins[query.variant]"
+			],
+			"geometry": "Array.geos[query.variant]"
+		}
+	}
+}

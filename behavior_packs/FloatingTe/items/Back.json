@@ -1,0 +1,49 @@
+//Addon made by Death_Aruban, for the purpose of entertainment and map improvement
+//• Re-upload our content on other platforms without authorization
+//• Add your own shorteners or ads to download our content
+//• Remove creator credits
+//• Modify or steal our content
+//• Post direct download links of our content
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "da:back",
+			"category": "items"
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:foil": false,
+			"minecraft:icon": {
+				"texture": "da:back"
+			},
+			"minecraft:display_name": {
+				"value": "§c§lExit §bFloating §aText+\n§r§7right click to return to the previous page."
+			},
+			"minecraft:on_use": {
+				"on_use": {
+					"event": "da:back"
+				}
+			},
+			"minecraft:cooldown": {
+				"category": "shop",
+				"duration": 0.1
+			},
+			"minecraft:render_offsets": "ingots"
+		},
+		"events": {
+			"da:back": {
+				"sequence": [
+					{
+						"run_command": {
+							"command": [
+								"function floating_text_function/back"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

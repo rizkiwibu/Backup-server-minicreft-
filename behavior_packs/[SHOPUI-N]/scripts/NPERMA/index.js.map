@@ -1,0 +1,287 @@
+{
+            texture: "textures/blocks/wool_colored_gray",
+            name: "§lColor\n§r§f[ click here ]",
+            tag: "colorshop",
+            array: [
+                {
+                    texture: "textures/blocks/wool_colored_white",
+                    buttonname: "White Wool\n[ click here ]",
+                    itemid: "minecraft:wool",
+                    data: 0,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/wool_colored_red",
+                    buttonname: "Red Wool\n[ click here ]",
+                    itemid: "minecraft:wool",
+                    data: 14,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/wool_colored_blue",
+                    buttonname: "Blue Wool\n[ click here ]",
+                    itemid: "minecraft:wool",
+                    data: 11,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/wool_colored_gray",
+                    buttonname: "Gray Wool\n[ click here ]",
+                    itemid: "minecraft:wool",
+                    data: 7,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/wool_colored_black",
+                    buttonname: "Black Wool\n[ click here ]",
+                    itemid: "minecraft:wool",
+                    data: 15,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/wool_colored_green",
+                    buttonname: "Green Wool\n[ click here ]",
+                    itemid: "minecraft:wool",
+                    data: 13,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/wool_colored_cyan",
+                    buttonname: "Cyan Wool\n[ click here ]",
+                    itemid: "minecraft:wool",
+                    data: 9,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/wool_colored_brown",
+                    buttonname: "Brown Wool\n[ click here ]",
+                    itemid: "minecraft:wool",
+                    data: 12,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/wool_colored_lime",
+                    buttonname: "Lime Wool\n[ click here ]",
+                    itemid: "minecraft:wool",
+                    data: 5,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/wool_colored_pink",
+                    buttonname: "Pink Wool\n[ click here ]",
+                    itemid: "minecraft:wool",
+                    data: 6,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/wool_colored_orange",
+                    buttonname: "Orange Wool\n[ click here ]",
+                    itemid: "minecraft:wool",
+                    data: 1,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/wool_colored_yellow",
+                    buttonname: "Yellow Wool\n[ click here ]",
+                    itemid: "minecraft:wool",
+                    data: 4,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/wool_colored_purple",
+                    buttonname: "Purple Wool\n[ click here ]",
+                    itemid: "minecraft:wool",
+                    data: 10,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/wool_colored_magenta",
+                    buttonname: "Magenta Wool\n[ click here ]",
+                    itemid: "minecraft:wool",
+                    data: 2,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/concrete_white",
+                    buttonname: "White Concrete\n[ click here ]",
+                    itemid: "minecraft:concrete",
+                    data: 0,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/concrete_red",
+                    buttonname: "Red Concrete\n[ click here ]",
+                    itemid: "minecraft:concrete",
+                    data: 14,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/concrete_blue",
+                    buttonname: "Blue Concrete\n[ click here ]",
+                    itemid: "minecraft:concrete",
+                    data: 11,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/concrete_gray",
+                    buttonname: "Gray Concrete\n[ click here ]",
+                    itemid: "minecraft:concrete",
+                    data: 7,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/concrete_black",
+                    buttonname: "Black Concrete\n[ click here ]",
+                    itemid: "minecraft:concrete",
+                    data: 15,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/concrete_green",
+                    buttonname: "Green Concrete\n[ click here ]",
+                    itemid: "minecraft:concrete",
+                    data: 13,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/concrete_cyan",
+                    buttonname: "Cyan Concrete\n[ click here ]",
+                    itemid: "minecraft:concrete",
+                    data: 9,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/concrete_brown",
+                    buttonname: "Brown Concrete\n[ click here ]",
+                    itemid: "minecraft:concrete",
+                    data: 12,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/concrete_lime",
+                    buttonname: "Lime Concrete\n[ click here ]",
+                    itemid: "minecraft:concrete",
+                    data: 5,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/concrete_pink",
+                    buttonname: "Pink Concrete\n[ click here ]",
+                    itemid: "minecraft:concrete",
+                    data: 6,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/concrete_orange",
+                    buttonname: "Orange Concrete\n[ click here ]",
+                    itemid: "minecraft:concrete",
+                    data: 1,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/concrete_yellow",
+                    buttonname: "Yellow Concrete\n[ click here ]",
+                    itemid: "minecraft:concrete",
+                    data: 4,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/concrete_purple",
+                    buttonname: "Purple Concrete\n[ click here ]",
+                    itemid: "minecraft:concrete",
+                    data: 10,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                },
+                {
+                    texture: "textures/blocks/concrete_magenta",
+                    buttonname: "Magenta Concrete\n[ click here ]",
+                    itemid: "minecraft:concrete",
+                    data: 2,
+                    min_buy: 1,
+                    max_buy: 64,
+                    price: 294,
+                    stock: 2000
+                }
+            ]
+        }

@@ -1,0 +1,38 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "§l§7Docs§8: §6mcbehub.com§8, §7Creator§8: §eSmell of Curry§r Npc UI Made by: sezra",
+        "name": "§l§eNPC §fForm UI RES v1.0.0§r",
+        "uuid": "19e34e2c-e4bb-11eb-ba80-0242ac130004",
+        "version": [
+            1,
+            0,
+            2
+        ],
+        "min_engine_version": [
+            1,
+            17,
+            0
+        ]
+    },
+    "modules": [
+        {
+            "description": "Example vanilla resource pack",
+            "type": "resources",
+            "uuid": "19e352b4-e4bb-11eb-ba80-0242ac130004",
+            "version": [
+                1,
+                0,
+                2
+            ]
+        }
+    ],
+    "metadata": {
+        "authors": [
+            "Smell of Curry",
+            "sezra"
+        ],
+        "license": "License.md",
+        "url": "https://mcbehub.com/"
+    }
+}

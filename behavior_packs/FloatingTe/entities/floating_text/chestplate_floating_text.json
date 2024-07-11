@@ -1,0 +1,188 @@
+//Addon made by Death_Aruban, for the purpose of entertainment and map improvement
+//• Re-upload our content on other platforms without authorization
+//• Add your own shorteners or ads to download our content
+//• Remove creator credits
+//• Modify or steal our content
+//• Post direct download links of our content
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "da:chestplate",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"move": {
+				"minecraft:movement": {
+					"value": 0.3
+				}
+			},
+			"stop": {
+				"minecraft:movement": {
+					"value": 0
+				}
+			}
+		},
+		"components": {
+			"minecraft:npc": {
+				"npc_data": {
+					"portrait_offsets": {
+						"translate": [
+							-7,
+							10,
+							0
+						],
+						"scale": [
+							1,
+							1,
+							1
+						]
+					},
+					"picker_offsets": {
+						"translate": [
+							0,
+							20,
+							0
+						],
+						"scale": [
+							1.7,
+							1.7,
+							1.7
+						]
+					},
+					"skin_list": [
+						{
+							"variant": 0
+						},
+						{
+							"variant": 1
+						},
+						{
+							"variant": 2
+						},
+						{
+							"variant": 3
+						},
+						{
+							"variant": 4
+						},
+						{
+							"variant": 5
+						}
+					]
+				}
+			},
+			"minecraft:nameable": {
+				"always_show": false,
+				"allow_name_tag_renaming": false
+			},
+			"minecraft:collision_box": {
+				"width": 1,
+				"height": 1
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:physics": {
+				"has_gravity": false
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:scale": {
+				"value": 0.6
+			},
+			"minecraft:health": {
+				"value": 999999999,
+				"max": 999999999
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:type_family": {
+				"family": [
+					"slime"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false,
+					"on_damage": {
+						"event": "left_click"
+					}
+				}
+			},
+			"minecraft:interact": {
+				"interactions": [
+					{
+						"on_interact": {
+							"0": {
+								"target": "self"
+							},
+							"filters": {
+								"any_of": [
+									{
+										"test": "has_equipment",
+										"domain": "hand",
+										"subject": "other",
+										"value": "stick"
+									}
+								]
+							},
+							"event": "despawn"
+						},
+						"use_item": false,
+						"interact_text": "Remove NPC"
+					}
+				]
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"move": {
+				"add": {
+					"component_groups": [
+						"move"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"stop"
+					]
+				}
+			},
+			"stop": {
+				"remove": {
+					"component_groups": [
+						"move"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"stop"
+					]
+				}
+			},
+			"left_click": {
+				"run_command": {
+					"target": "self",
+					"command": [
+						"tag @s add edit",
+						"execute @s[tag=edit] ~ ~ ~ execute @e[tag=floating] ~ ~ ~ function floating_text_function/floating_item/menu_item_floating"
+					]
+				}
+			}
+		}
+	}
+}

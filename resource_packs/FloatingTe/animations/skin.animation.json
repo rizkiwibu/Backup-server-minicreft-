@@ -1,0 +1,94 @@
+//Addon made by Death_Aruban, for the purpose of entertainment and map improvement
+//• Re-upload our content on other platforms without authorization
+//• Add your own shorteners or ads to download our content
+//• Remove creator credits
+//• Modify or steal our content
+//• Post direct download links of our content
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.skin.rotate": {
+			"loop": true,
+			"animation_length": 1.4,
+			"bones": {
+				"RightArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							7.5
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						],
+						"1.0": [
+							0,
+							0,
+							7.5
+						]
+					}
+				},
+				"LeftArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							-150
+						],
+						"0.5": [
+							0,
+							0,
+							-122.5
+						],
+						"1.0": [
+							0,
+							0,
+							-150
+						],
+						"1.5": [
+							0,
+							0,
+							-122.5
+						],
+						"2.0": [
+							0,
+							0,
+							-150
+						]
+					}
+				},
+				"total": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.5": [
+							0,
+							-90,
+							0
+						],
+						"1.0": [
+							0,
+							-180,
+							0
+						],
+						"1.5": [
+							0,
+							-270,
+							0
+						],
+						"2.0": [
+							0,
+							-360,
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}

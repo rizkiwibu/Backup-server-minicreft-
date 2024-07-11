@@ -1,0 +1,46 @@
+{
+  "namespace": "hud",
+  "hud_title_text": {
+    "type": "panel",
+    "size": ["100%cm", "100%c"],
+    "anchor_from": "right_middle",
+    "anchor_to": "right_middle",
+    "offset": [-3, 0],
+    "alpha": 0.5,
+    "controls": [
+      {
+        "sidebar": {
+          "type": "panel",
+          "size": ["100%c", "100%c"],
+          "offset": [0, 0],
+          "controls": [
+            {
+              "title_background": {
+                "type": "image",
+                "alpha": 1,
+                "size": ["100%cm+6px", "100%c+3px"],
+                "texture": "textures/board/background",
+                "controls": [
+                  {
+                    "title": {
+                      "type": "label",
+                      "text": "$title_text",
+                      "anchor_from": "center_middle",
+                      "anchor_to": "center_middle",
+                      "color": "$tool_tip_text",
+                      "text_alignment": "left",
+                      "layer": 1,
+                      "localize": false,
+                      "font_size": "medium",
+                      "alpha": 2
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

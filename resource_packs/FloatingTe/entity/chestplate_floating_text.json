@@ -1,0 +1,53 @@
+//Addon made by Death_Aruban, for the purpose of entertainment and map improvement
+//• Re-upload our content on other platforms without authorization
+//• Add your own shorteners or ads to download our content
+//• Remove creator credits
+//• Modify or steal our content
+//• Post direct download links of our content
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "da:chestplate",
+			"materials": {
+				"default": "zombie"
+			},
+			"textures": {
+				"chestplate_leather": "textures/chestplate_floating_text/chestplate_leather",
+				"chestplate_chain": "textures/chestplate_floating_text/chestplate_chain",
+				"chestplate_iron": "textures/chestplate_floating_text/chestplate_iron",
+				"chestplate_gold": "textures/chestplate_floating_text/chestplate_gold",
+				"chestplate_diamond": "textures/chestplate_floating_text/chestplate_diamond",
+				"chestplate_netherite": "textures/chestplate_floating_text/chestplate_netherite"
+			},
+			"geometry": {
+				"chestplate_leather": "geometry.chestplate",
+				"chestplate_chain": "geometry.chestplate",
+				"chestplate_iron": "geometry.chestplate",
+				"chestplate_gold": "geometry.chestplate",
+				"chestplate_diamond": "geometry.chestplate",
+				"chestplate_netherite": "geometry.chestplate"
+			},
+			"render_controllers": [
+				"controller.render.chestplate_floating"
+			],
+			"spawn_egg": {
+				"texture": "spawn_egg",
+				"texture_index": 49
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+				]
+			},
+			"animations": {
+				"idle": "animation.chestplate.rotate"
+			},
+			"animation_controllers": [
+				{
+					"idle": "controller.animation.chestplate.idle"
+				}
+			]
+		}
+	}
+}

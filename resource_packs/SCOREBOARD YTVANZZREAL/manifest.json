@@ -1,0 +1,25 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Scoreboard RP | YTVanzzReal",
+    "description": "§aAddon Scoreboard By §6YTVanz§ezReal",
+    "uuid": "d6788158-ad36-4467-8cc2-cc643f52cf01",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 17, 10]
+  },
+  "modules": [
+    {
+      "description": "§6Addon Pack Scoreboard, Rank, Clan, Chat Rank\nDownload this addon on §bhttps://mafly-studio.xyz/",
+      "type": "resources",
+      "uuid": "8b38a294-ce35-4408-9da7-213c0770b292",
+      "version": [1, 0, 0]
+    }
+  ],
+  "subpacks": [
+    {
+      "folder_name": "black",
+      "name": "Background Black",
+      "memory_tier": 0
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.dynamic_lighting": {
+      "animation_length": 0.1,
+      "loop": true,
+      "timeline": {
+        "0.0": "/execute @s ~ ~ ~ detect ~ ~1 ~ air 0 setblock ~ ~1 ~ ck:light_one"
+      }
+    },
+    "animation.mana_render": {
+      "animation_length": 1,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+            "/execute @s[scores={mana=0}] ~~~ title @s actionbar §3Mana§r : §0::::::::::::::::::::",
+            "/execute @s[scores={mana=1..5}] ~~~ title @s actionbar §3Mana§r : §b§e:§0:::::::::::::::::::",
+            "/execute @s[scores={mana=6..10}] ~~~ title @s actionbar §3Mana§r : §b§e::§0::::::::::::::::::",
+            "/execute @s[scores={mana=11..15}] ~~~ title @s actionbar §3Mana§r : §b§e:::§0:::::::::::::::::",
+            "/execute @s[scores={mana=16..20}] ~~~ title @s actionbar §3Mana§r : §b§e::::§0::::::::::::::::",
+            "/execute @s[scores={mana=21..25}] ~~~ title @s actionbar §3Mana§r : §b§e:::::§0:::::::::::::::",
+            "/execute @s[scores={mana=26..30}] ~~~ title @s actionbar §3Mana§r : §b§e::::::§0::::::::::::::",
+            "/execute @s[scores={mana=31..35}] ~~~ title @s actionbar §3Mana§r : §b§e:::::::§0:::::::::::::",
+            "/execute @s[scores={mana=36..40}] ~~~ title @s actionbar §3Mana§r : §b§e::::::::§0::::::::::::",
+            "/execute @s[scores={mana=41..45}] ~~~ title @s actionbar §3Mana§r : §b§e:::::::::§0:::::::::::",
+            "/execute @s[scores={mana=46..50}] ~~~ title @s actionbar §3Mana§r : §b§e::::::::::§0::::::::::",
+            "/execute @s[scores={mana=51..55}] ~~~ title @s actionbar §3Mana§r : §b§e:::::::::::§0:::::::::",
+            "/execute @s[scores={mana=56..60}] ~~~ title @s actionbar §3Mana§r : §b§e::::::::::::§0::::::::",
+            "/execute @s[scores={mana=61..65}] ~~~ title @s actionbar §3Mana§r : §b§e:::::::::::::§0:::::::",
+            "/execute @s[scores={mana=66..70}] ~~~ title @s actionbar §3Mana§r : §b§e::::::::::::::§0::::::",
+            "/execute @s[scores={mana=71..75}] ~~~ title @s actionbar §3Mana§r : §b§e:::::::::::::::§0:::::",
+            "/execute @s[scores={mana=76..80}] ~~~ title @s actionbar §3Mana§r : §b§e::::::::::::::::§0::::",
+            "/execute @s[scores={mana=81..85}] ~~~ title @s actionbar §3Mana§r : §b§e:::::::::::::::::§0:::",
+            "/execute @s[scores={mana=86..90}] ~~~ title @s actionbar §3Mana§r : §b§e::::::::::::::::::§0::",
+            "/execute @s[scores={mana=91..95}] ~~~ title @s actionbar §3Mana§r : §b§e:::::::::::::::::::§0:",
+            "/execute @s[scores={mana=96..99}] ~~~ title @s actionbar §3Mana§r : §b§e::::::::::::::::::::",
+            "/execute @s[scores={mana=100}] ~~~ title @s actionbar §3Mana§r : §b§a::::::::::::::::::::"
+        ]
+      }
+    }
+  }
+}

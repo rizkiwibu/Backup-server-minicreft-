@@ -1,0 +1,96 @@
+//Addon made by Death_Aruban, for the purpose of entertainment and map improvement
+//• Re-upload our content on other platforms without authorization
+//• Add your own shorteners or ads to download our content
+//• Remove creator credits
+//• Modify or steal our content
+//• Post direct download links of our content
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "da:floating_text_clickable4",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false,
+					"on_damage": {
+						"event": "left_click"
+					}
+				}
+			},
+			"minecraft:interact": {
+				"interactions": {
+					"on_interact": {
+						"event": "right_click"
+					}
+				}
+			},
+			"minecraft:type_family": {
+				"family": [
+					"npc"
+				]
+			},
+			"minecraft:health": {
+				"value": 32767,
+				"max": 32767
+			},
+			"minecraft:movement": {
+				"value": 0
+			},
+			"minecraft:jump.static": {
+				"jump_power": 0
+			},
+			"minecraft:physics": {
+				"has_collision": true,
+				"has_gravity": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 1
+			},
+			"minecraft:nameable": {
+				"alwaysShow": true,
+				"allowNameTagRenaming": false
+			},
+			"minecraft:scale": {
+				"value": 2
+			},
+			"component_groups": {},
+			"minecraft:behavior.look_at_player": {
+				"look_distance": 5
+			}
+		},
+		"events": {
+			"right_click": {
+				"run_command": {
+					"target": "other",
+					"command": [
+						"function your_commands/4"
+					]
+				}
+			},
+			"left_click": {
+				"run_command": {
+					"target": "self",
+					"command": [
+						"tag @s add edit",
+						"execute @s[tag=edit] ~ ~ ~ execute @e[tag=floating] ~ ~ ~ function floating_text_function/clickable_floating_text/menucb"
+					]
+				}
+			}
+		},
+		"component_groups": {}
+	}
+}

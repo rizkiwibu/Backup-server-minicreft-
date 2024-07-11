@@ -1,0 +1,224 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "ck:player_wing",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"family_player_control": {
+				"minecraft:type_family": {
+					"family": ["player_wing", "player_control"]
+				}
+			},
+			"remove": {
+				"minecraft:instant_despawn": {}
+			},
+			"mob_gravity_true": {
+				"minecraft:physics": {
+					"has_gravity": true
+				}
+			},
+			"mob_gravity_false": {
+				"minecraft:physics": {
+					"has_gravity": false
+				}
+			},
+			"mob_on_ground": {
+				"minecraft:movement": {
+					"value": 0.09
+				}
+			},
+			"mob_on_air": {
+				"minecraft:movement": {
+					"value": 0.33
+				}
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"family_player_control"
+					]
+				}
+			},
+			"ck:mob_on_ground": {
+				"remove": {
+					"component_groups": [
+						"mob_on_air"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"mob_on_ground"
+					]
+				}
+			},
+			"ck:mob_on_air": {
+				"remove": {
+					"component_groups": [
+						"mob_on_ground"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"mob_on_air"
+					]
+				}
+			},
+			"ck:mob_gravity_true": {
+				"remove": {
+					"component_groups": [
+						"mob_gravity_false"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"mob_gravity_true"
+					]
+				}
+			},
+			"ck:mob_gravity_false": {
+				"remove": {
+					"component_groups": [
+						"mob_gravity_true"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"mob_gravity_false"
+					]
+				},
+				"run_command": {
+					"command": [
+						"effect @s clear",
+						"tp @s ~~~"
+					]
+				}
+			},
+			"remove": {
+				"add": {
+					"component_groups": [
+						"remove"
+					]
+				},
+				"run_command": {
+					"command": [
+						"event entity @p[c=1] ck:wing_off"
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": ["player_control"]
+			},
+			"minecraft:rideable": {
+				"seat_count": 1,
+				"crouching_skip_interact": true,
+				"rider_can_interact": false,
+				"family_types": ["player"],
+				"seats": [{
+					"position": [0, 1.3, 0],
+					"min_rider_count": 0,
+					"max_rider_count": 0,
+					"rotate_rider_by": -90
+				}]
+			},
+			"minecraft:floats_in_liquid": {},
+			"minecraft:is_saddled": {},
+			"minecraft:input_ground_controlled": {},
+			"minecraft:behavior.player_ride_tamed": {},
+			"minecraft:damage_sensor": {
+				"triggers": [{
+					"cause": "all",
+					"deals_damage": false
+				}]
+			},
+			"minecraft:can_power_jump": {},
+			"minecraft:horse.jump_strength": {
+				"value": {
+					"range_min": 0.0,
+					"range_max": 0.0
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 1.0,
+				"height": 1.0
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0,
+				"breathes_air": true,
+				"breathes_water": true
+			},
+			"minecraft:movement": {
+				"value": 0.28
+			},
+			"minecraft:navigation.generic": {
+				"is_amphibious": true,
+				"can_path_over_water": true,
+				"can_swim": false,
+				"can_walk": true,
+				"can_breach": false,
+				"can_sink": false
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [{
+						"filters": {
+							"test": "rider_count",
+							"subject": "self",
+							"operator": "==",
+							"value": 0
+						},
+						"event": "remove"
+					},
+					{
+						"filters": {
+							"all_of": [{
+									"test": "rider_count",
+									"operator": ">",
+									"value": 0
+								},
+								{
+									"test": "on_ground",
+									"operator": "==",
+									"value": true
+								}
+							]
+						},
+						"event": "ck:mob_on_ground"
+					},
+					{
+						"filters": {
+							"all_of": [{
+									"test": "rider_count",
+									"operator": ">",
+									"value": 0
+								},
+								{
+									"test": "on_ground",
+									"operator": "==",
+									"value": false
+								}
+							]
+						},
+						"event": "ck:mob_on_air"
+					}
+				]
+			}
+		}
+	}
+}

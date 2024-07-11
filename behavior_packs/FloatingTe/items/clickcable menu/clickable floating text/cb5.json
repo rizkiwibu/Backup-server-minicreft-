@@ -1,0 +1,50 @@
+//Addon made by Death_Aruban, for the purpose of entertainment and map improvement
+//• Re-upload our content on other platforms without authorization
+//• Add your own shorteners or ads to download our content
+//• Remove creator credits
+//• Modify or steal our content
+//• Post direct download links of our content
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "da:cb5",
+			"category": "items"
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:foil": false,
+			"minecraft:icon": {
+				"texture": "da:cb5"
+			},
+			"minecraft:display_name": {
+				"value": "§6§lSpawn §bFloating §aText+ §fclickable\n§r§7right click spawn."
+			},
+			"minecraft:on_use": {
+				"on_use": {
+					"event": "da:edit"
+				}
+			},
+			"minecraft:cooldown": {
+				"category": "shop",
+				"duration": 0.1
+			},
+			"minecraft:render_offsets": "ingots"
+		},
+		"events": {
+			"da:edit": {
+				"sequence": [
+					{
+						"run_command": {
+							"command": [
+								"execute @p[tag=floating] ~ ~ ~ tag @s[tag=floating] add cb5",
+								"function floating_text_function/clickable_floating_text/cb"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,18 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "npc:adjust_height_xtra_small"
+    },
+
+    "components": {
+      "minecraft:display_name":{
+		"value": "Adjust Height [Extra Small]"
+	  },
+	  "minecraft:icon":{
+		  "frame": 0,
+		  "texture": "xtra_small"
+	  }
+    }
+  }
+}

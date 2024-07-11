@@ -1,0 +1,276 @@
+import { world, Player, system } from "@minecraft/server";
+import {
+  ActionFormData,
+  MessageFormData,
+  ModalFormData,
+  ActionFormResponse,
+  MessageFormResponse,
+  ModalFormResponse,
+} from "@minecraft/server-ui";
+export { math } from "./math.js";
+export { Xyz } from "./xyz.js";
+export { Score } from "./score(0).js";
+import { Config } from "../config.js";
+import { ServerSetDB } from "../databaseSave.js";
+export { CooldownClass } from "./CDclass";
+
+// -- FUNCTION
+async function runCommand(command, dim) {
+  let dimension = dim || "overworld";
+  try {
+    return {
+      error: false,
+      ...world.getDimension(dimension).runCommandAsync(command),
+    };
+  } catch (error) {
+    return { error: true };
+  }
+}
+
+function setTickTimeout(callback, tick, loop = false) {
+  let cT = 0;
+  const tE = world.events.tick.subscribe((data) => {
+    if (cT === 0) cT = data.currentTick + tick;
+    if (cT <= data.currentTick) {
+      try {
+        callback();
+      } catch (e) {
+        console.warn(`${e} : ${e.stack}`);
+      }
+      if (loop) cT += tick;
+      else world.events.tick.unsubscribe(tE);
+    }
+  });
+}
+
+/**
+ * @param {void} callback
+ * @param {number} time
+ */
+function setTimeout(callback, time) {
+  let cT = 0;
+  const tE = world.events.tick.subscribe(({ deltaTime, currentTick }) => {
+    if (cT == 0) cT = currentTick + time * 20;
+    if (currentTick == cT) {
+      try {
+        callback();
+      } catch (e) {
+        console.warn(`${e} : ${e.stack}`);
+      }
+      world.events.tick.unsubscribe(tE);
+    }
+  });
+}
+
+/**
+ * @param {Number} ms
+ */
+async function sleep(tick) {
+  try {
+    return new Promise((resolve, reject) => {
+      system.runTimeout(resolve, tick);
+    });
+  } catch (err) {
+    console.warn(err, err.stack);
+  }
+}
+
+/**
+ * @param {String} playerName
+ * @returns {Player | undefined}
+ */
+function getPlayer(playerName) {
+  let name = playerName.replaceAll("_", " ");
+  let player = Array.from(world.getPlayers()).find((p) => p.name == name);
+  return player;
+}
+
+function getCooldown(cooldown, player) {
+  let cd = cooldown[player.name];
+  if (!cd) return 0;
+  if (Date.now() >= cd) return 0;
+  return Math.ceil((cd - Date.now()) / 1000);
+}
+
+function isCombat(player) {
+  let playerName = player.nameTag ?? player;
+  return combat.find((c) => c.player == playerName) != undefined;
+}
+
+function getPrefix() {
+  return getSetting("commandPrefix") ?? Config.prefix;
+}
+
+/**
+ *
+ * @param {Player} player
+ * @param {ActionFormData | MessageFormData | ModalFormData} form
+ * @returns {ActionFormResponse | MessageFormResponse | ModalFormResponse}
+ */
+
+async function ForceOpen(player, form) {
+  while (true) {
+    const response = await form.show(player);
+    if (response.cancelationReason !== "userBusy") return response;
+  }
+}
+
+function getCurrentDimension(player) {
+  let dimension = player.dimension.id.replace("minecraft:", "");
+  return dimension;
+}
+
+/**
+ * Get Empty Slot in Inventory
+ * @param {Container} inventory
+ * @returns {Number[]}
+ */
+async function getEmptySlot(inventory) {
+  let emptySlot = [];
+  for (let i = 0; i < inventory.size; i++) {
+    let item = inventory.getItem(i);
+    if (!item) emptySlot.push(i);
+  }
+
+  return emptySlot;
+}
+
+/**
+ * Give item to Player
+ * @param {Player} player
+ * @param {[]} itemData
+ * @param {Number} slot
+ * @returns {Number | undefined}
+ */
+async function giveItem(player, itemData, slot) {
+  let inventory = player.getComponent("inventory").container;
+  let [itemType, amount, data] = itemData;
+  let emptySlot = slot ?? (await getEmptySlot(inventory))[0];
+  if (emptySlot < 9) {
+    await player.runCommandAsync(
+      `replaceitem entity @s slot.hotbar ${emptySlot} ${itemType} ${amount} ${data}`
+    );
+  } else {
+    emptySlot = emptySlot - 9;
+    await player.runCommandAsync(
+      `replaceitem entity @s slot.inventory ${emptySlot} ${itemType} ${amount} ${data}`
+    );
+  }
+
+  return emptySlot;
+}
+
+// CHECK TPA
+/**
+ * @param {Player} player
+ */
+function noTPA(player) {
+  let tag = player.getTags().find((t) => t.startsWith("tpasetting"));
+  let set = "";
+  if (tag == undefined) {
+    return false;
+  }
+  set = tag.substring("tpasetting:".length);
+  if (set == "on") return false;
+  if (set == "off") return true;
+}
+
+function getScore(target, objective) {
+  try {
+    const oB = world.scoreboard.getObjective(objective);
+    if (typeof target === "string") {
+      const participant = oB
+        .getParticipants()
+        .find((pT) => pT.displayName === target);
+      const score = participant ? oB.getScore(participant) : 0;
+      return score === undefined ? 0 : score;
+    }
+    const score = oB.getScore(target.scoreboardIdentity);
+    return score === undefined ? 0 : score;
+  } catch {
+    return 0;
+  }
+}
+
+function metricNumbers(value) {
+  const types = ["", "k", "M", "B", "T", "P", "E", "Z", "Y"];
+  const selectType = (Math.log10(value) / 3) | 0;
+  if (selectType == 0) return value;
+  let scaled = value / Math.pow(10, selectType * 3);
+  return scaled.toFixed(1) + types[selectType];
+}
+
+export function getTime(satuan) {
+  var d = new Date();
+  var utc = d.getTimezoneOffset();
+  d.setMinutes(d.getMinutes() + utc);
+  var indTime = 7 * 60;
+  d.setMinutes(d.getMinutes() + indTime);
+
+  if (satuan == "h") return d.getHours();
+  if (satuan == "m") return d.getMinutes();
+  if (satuan == "s") return d.getSeconds();
+}
+
+function getOnlinePlayers(asNumber = false) {
+  let onlinePlayers = world.getAllPlayers();
+
+  return asNumber ? onlinePlayers.length : onlinePlayers;
+}
+
+// Ini Buat Hari,Tanggal,Bulan,Tahun
+export function getFormattedDate(isNumber = false) {
+  var d = new Date();
+  var days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+  var months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul",
+    "Agu",
+    "Sep",
+    "Okt",
+    "Nov",
+    "Des",
+  ];
+  var day = days[d.getDay()];
+  var month = months[d.getMonth()];
+  var date = d.getDate();
+  var year = d.getFullYear();
+  let format = "";
+
+  if (isNumber) {
+    const formattedDate = (date < 10 ? "0" : "") + date;
+    const formattedMonth =
+      (d.getMonth() + 1 < 10 ? "0" : "") + (d.getMonth() + 1);
+    format = formattedDate + "/" + formattedMonth + "/" + year;
+  } else {
+    format = date + " " + month + " " + year;
+  }
+
+  return format;
+}
+
+export {
+  runCommand,
+  setTickTimeout,
+  setTimeout,
+  sleep,
+  getPlayer,
+  SettingType,
+  getSetting,
+  getCooldown,
+  isCombat,
+  getPrefix,
+  ForceOpen,
+  getCurrentDimension,
+  getEmptySlot,
+  giveItem,
+  noTPA,
+  getScore,
+  metricNumbers,
+  getOnlinePlayers,
+};

@@ -1,0 +1,29 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "§eEnchantShop GUI",
+        "description": "Nakata Ardinata ESHOPGUI with ChestForm",
+        "uuid": "c780348d-4483-46cb-9303-5edd9d06a91f",
+        "version": [1, 0, 0],
+        "min_engine_version": [1,17,0]
+    },
+    "modules": [
+        {
+            "type": "script",
+            "language": "javascript",
+            "uuid": "4ac28e91-0f61-4f15-80b5-53a7f1cc7c88",
+            "version": "1.0.0-beta",
+            "entry": "scripts/index.js"
+        }
+    ],
+    "dependencies": [
+        {
+            "module_name": "@minecraft/server",
+            "version": "1.12.0-beta"
+        },
+        {
+            "module_name": "@minecraft/server-ui",
+            "version": "1.2.0-beta"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "[SHOPUI-N](RP)",
+        "description": "Dependency",
+        "uuid": "34e68ec0-0dd2-4bf2-95f8-5914dc1042f9",
+        "version": [1, 0, 0],
+        "min_engine_version": [1, 20, 70]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "uuid": "f1d9f3de-0278-4b49-84da-08623d40153f",
+            "version": [1, 0, 0]
+        }
+    ]
+}

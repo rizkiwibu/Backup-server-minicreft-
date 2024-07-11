@@ -1,0 +1,205 @@
+{
+    "namespace": "hud",
+    "hud_title_text": {
+        "type": "panel",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "alpha": 1.0,
+        "controls": [
+            {
+                "hud_custom_text": {
+                    "type": "panel",
+                    "size": [
+                        "100%c",
+                        "100%c"
+                    ],
+                    "offset": [
+                        -7,
+                        "25%C"
+                    ],
+                    "anchor_from": "right_middle",
+                    "anchor_to": "right_middle",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#text",
+                            "binding_type": "global"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((('%.5s' * #text) = 'ranks'))",
+                            "target_property_name": "#visible"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "hud_background_title": {
+                                "type": "image",
+                                "size": [
+                                    "100%cm+10px",
+                                    "100%c+10px"
+                                ],
+                                "offset": [
+                                    0,
+                                    0
+                                ],
+                                "anchor_from": "right_middle",
+                                "anchor_to": "right_middle",
+                                "texture": "textures/ui/background_actionbar_sidebar_text",
+                                "alpha": 0.5,
+                                "controls": [
+                                    {
+                                        "hud_custom_text": {
+                                            "type": "image",
+                                            "size": [
+                                                "100%c+10px",
+                                                "100%c+10px"
+                                            ],
+                                            "offset": [
+                                                0,
+                                                0
+                                            ],
+                                            "anchor_from": "top_middle",
+                                            "anchor_to": "bottom_middle",
+                                            "texture": "textures/ui/background_actionbar_sidebar_text",
+                                            "alpha": 0.5,
+                                            "controls": [
+                                                {
+                                                    "title_text_head": {
+                                                        "type": "label",
+                                                        "font_size": "normal",
+                                                        "font_type": "MinecraftTen",
+                                                        "text": "#title_te",
+                                                        "anchor_from": "center",
+                                                        "anchor_to": "center",
+                                                        "layer": 3,
+                                                        "bindings": [
+                                                            {
+                                                                "binding_type": "global",
+                                                                "binding_name": "#hud_title_text_string"
+                                                            },
+                                                            {
+                                                                "binding_type": "view",
+                                                                "source_property_name": "(('%.20s' * #hud_title_text_string) - ('%.5s' * #hud_title_text_string))",
+                                                                "target_property_name": "#title_te"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "actionbar_message": {
+                                            "type": "label",
+                                            "anchor_from": "center",
+                                            "anchor_to": "center",
+                                            "font_size": "normal",
+                                            "text_alignment": "center",
+                                            "color": "$tool_tip_text",
+                                            "layer": 31,
+                                            "text": "#title_tex",
+                                            "alpha": 2.0,
+                                            "bindings": [
+                                                {
+                                                    "binding_type": "global",
+                                                    "binding_name": "#hud_title_text_string"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_property_name": "(#hud_title_text_string - ('%.20s' * #hud_title_text_string))",
+                                                    "target_property_name": "#title_tex"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "hud_title_text_original": {
+                    "type": "stack_panel",
+                    "orientation": "vertical",
+                    "offset": [
+                        0,
+                        -19
+                    ],
+                    "layer": 1,
+                    "alpha": "@hud.anim_title_text_alpha_in",
+                    "propagate_alpha": true,
+                    "$ttext": "$title_text",
+                    "bindings": [],
+                    "controls": [
+                        {
+                            "title_frame": {
+                                "type": "panel",
+                                "size": [
+                                    "100%",
+                                    "100%cm"
+                                ],
+                                "controls": [
+                                    {
+                                        "title_background": {
+                                            "type": "image",
+                                            "size": [
+                                                "100%sm + 30px",
+                                                "100%sm + 6px"
+                                            ],
+                                            "texture": "textures/ui/hud_tip_text_background",
+                                            "alpha": "@hud.anim_title_background_alpha_in"
+                                        }
+                                    },
+                                    {
+                                        "title": {
+                                            "type": "label",
+                                            "anchor_from": "top_middle",
+                                            "anchor_to": "top_middle",
+                                            "color": "$title_command_text_color",
+                                            "text": "#text",
+                                            "layer": 1,
+                                            "localize": false,
+                                            "font_size": "extra_large",
+                                            "variables": [
+                                                {
+                                                    "requires": "(not $title_shadow)",
+                                                    "$show_shadow": false
+                                                },
+                                                {
+                                                    "requires": "$title_shadow",
+                                                    "$show_shadow": true
+                                                }
+                                            ],
+                                            "shadow": "$show_shadow",
+                                            "text_alignment": "center",
+                                            "offset": [
+                                                0,
+                                                6
+                                            ],
+                                            "bindings": [
+                                                {
+                                                    "binding_name": "#hud_title_text_string",
+                                                    "binding_name_override": "#text",
+                                                    "binding_type": "global"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_property_name": "(not (('%.5s' * #text) = 'ranks'))",
+                                                    "target_property_name": "#visible"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

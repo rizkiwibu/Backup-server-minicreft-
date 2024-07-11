@@ -1,0 +1,49 @@
+{
+    "format_version": 2,
+
+    "header": {
+        "name": "[SHOPUI-N]",
+        "description": "SHOPUI by @Nperma, config_path: `BP/NPERMA/config.js`",
+        "min_engine_version": [1, 20, 70],
+        "uuid": "efec260f-fc07-4813-8ec9-b7a6b9d2e36a",
+        "version": [1, 0, 0]
+    },
+    "metadata": {
+        "author": "Nperma",
+        "url-github": "https://github.com/nperma"
+    },
+    "modules": [
+        {
+            "description": "",
+            "type": "data",
+            "uuid": "0a4c3dd7-409a-45b0-ad56-2fe9ee767af4",
+            "version": [1, 0, 0]
+        },
+        {
+            "description": "",
+            "uuid": "a94fc6c4-e172-418e-8e74-b2558e2d00e9",
+            "version": "1.1.0-beta",
+            "type": "script",
+            "language": "javascript",
+            "entry": "scripts/NPERMA/index.js"
+        }
+    ],
+    "dependencies": [
+        {
+            "uuid": "34e68ec0-0dd2-4bf2-95f8-5914dc1042f9",
+            "version": [1, 0, 0]
+        },
+        {
+            "module_name": "@minecraft/server",
+            "version": "1.11.0-beta"
+        },
+        {
+            "module_name": "@minecraft/server-ui",
+            "version": "1.2.0-beta"
+        },
+        {
+            "module_name": "@minecraft/server-gametest",
+            "version": "1.0.0-beta"
+        }
+    ]
+}

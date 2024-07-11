@@ -1,0 +1,16 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.player.general": {
+            "initial_state": "default",
+                    "transitions": [
+                        {"wing_off": "!query.is_riding && query.is_sheared"},
+                        {"grappling_hook": "!query.is_riding && query.variant > 0"}
+                    ]
+                },
+                "wing_off": {
+                    "on_entry": [
+						"@s ck:wing_off"
+                    ],
+    }
+}

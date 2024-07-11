@@ -1,0 +1,29 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "§gServer§fUI - §b§l§oRENEWED§r",
+        "description": "1.12.0-beta",
+        "uuid": "c780348d-5483-46cc-9303-5edd9d06b990",
+        "version": [1, 0, 0],
+        "min_engine_version": [1,17,0]
+    },
+    "modules": [
+        {
+            "type": "script",
+            "language": "javascript",
+            "uuid": "4ac28f91-1f61-4f15-80b5-53a7f1cc7c90",
+            "version": "1.0.0-beta",
+            "entry": "scripts/index.js"
+        }
+    ],
+    "dependencies": [
+        {
+            "module_name": "@minecraft/server",
+            "version": "1.12.0-beta"
+        },
+        {
+            "module_name": "@minecraft/server-ui",
+            "version": "1.2.0-beta"
+        }
+    ]
+}
